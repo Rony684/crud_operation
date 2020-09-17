@@ -1,0 +1,53 @@
+{% extends 'master.html' %} {%block content%}
+
+<style>
+    .center-column {
+        width: 600px;
+        margin: 20px auto;
+        padding: 1px;
+        background-color: #fff;
+        border-radius: 3px;
+        box-shadow: 6px 2px 30px 0px rgba(0, 0, 0, 0.75);
+    }
+    
+    .pragraph {
+        background-color: #056676;
+        margin: 10px;
+        padding: 3px;
+        border-radius: 3px;
+        color: #fff;
+        font-size: 20px;
+        box-shadow: 0px -1px 10px -4px rgba(0, 0, 0, 0.75);
+    }
+</style>
+
+<div class="center-column">
+    <div class="pragraph">
+
+        <div class="container">
+            <br>
+            <h2> Edit a Book </h2>
+            <hr>
+
+            <form action="/update/{{ books.id }}">
+
+                {% csrf_token %}
+
+                <label class="form-group" for="title">Title: </label>
+                <input class="form-control" type="text" name="title" value="{{ books.title }}" placeholder="{{ books.title }}">
+
+                <label class="form-group" for="price">Price: </label>
+                <input class="form-control" type="text" name="price" value="{{ books.price }}" placeholder="{{ books.price }}">
+
+                <label class="form-group" for="author">Author: </label>
+                <input class="form-control" type="text" name="author" value="{{ books.author }}" placeholder="{{ books.author }}">
+                <br>
+
+                <input class="btn btn-primary" type="submit" value="Update">
+
+            </form>
+
+
+        </div>
+    </div>
+    {%endblock%}

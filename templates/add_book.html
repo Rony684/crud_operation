@@ -1,0 +1,52 @@
+{% extends 'master.html' %} {%block content%}
+<style>
+    .center-column {
+        width: 600px;
+        margin: 20px auto;
+        padding: 1px;
+        background-color: #fff;
+        border-radius: 3px;
+        box-shadow: 6px 2px 30px 0px rgba(0, 0, 0, 0.75);
+    }
+    
+    .pragraph {
+        background-color: #056676;
+        margin: 10px;
+        padding: 3px;
+        border-radius: 3px;
+        color: #fff;
+        font-size: 20px;
+        box-shadow: 0px -1px 10px -4px rgba(0, 0, 0, 0.75);
+    }
+</style>
+<div class="center-column">
+    <div class="pragraph">
+
+        <div class="container">
+            <br>
+            <h2>Add a Book</h2>
+            <hr>
+
+            <form action="/create">
+
+
+                {% csrf_token %}
+                <label class="form-group" for="title">Title: </label>
+                <input class="form-control" type="text" name="title"><br>
+
+                <label class="form-group" for="price">Price: </label>
+                <input class="form-control" type="text" name="price"><br>
+
+                <label class="form-group" for="author">Author: </label>
+                <input class="form-control" type="text" name="author"><br>
+
+                <input class="btn btn-success" type="submit" value="Create">
+
+
+            </form>
+            <br>
+
+
+        </div>
+    </div>
+    {%endblock%}
